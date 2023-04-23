@@ -1,0 +1,162 @@
+#game{
+    /* width: 90%; */
+    height: 300px;
+    border: 2px solid black;
+    border-bottom: 5px solid;
+    border-right: 10px solid;
+    border-left: 10px solid;
+    margin: auto;
+    background-repeat: unset;
+    background-size: contain;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+#game>span{
+    right: 10px;
+    position: absolute;
+    color: coral;
+}
+#game:has(.dino)>span{
+    color: coral;
+}
+#game:has(.mario)>span{
+    color: #fff;
+}
+
+/* Next, we’ll style our character div. We have to declare the position as relative because positional attributes like top and left only apply to positioned elements. */
+
+#character{
+    width: 120px;
+    height: 150px;
+    background-color: transparent;
+    position: relative;
+    top: 55%;
+    background-repeat: no-repeat;
+    background-size: inherit;
+    /* game height - character height (200 - 50) */
+}
+
+.dino{
+    background-image: url('assets/images/Dinosaur.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.mario{
+    background-image: url('assets/images/mario.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.dino_bg{
+    background-image: url('assets/images/dino_bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.mario_bg{
+    background-image: url('assets/images/mario_bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.mario_tree{
+    background-image: url('assets/images/2x-obstacle-large.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.dino_tree{
+    background-image: url('assets/images/2x-obstacle-large.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+/* Create a keyframe animation called jump. This animation will make the top position slide up 50px and then slide back down. */
+
+@keyframes jump{
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+}
+
+/* Next, we’ll create a new class called animate, which applies the jump animation. */
+
+.animate{
+    animation: jump 300ms linear;
+}
+
+#block{
+    width: 120px;
+    height: 120px;
+    position: relative;
+    /* game height - character height - block height (200 - 50 - 20) */
+    top: 30%; 
+    /* game width - block width (500 - 20) */
+    left: 480px; 
+    display: none;
+}
+
+.block-animate{
+    animation: block 1s infinite linear;
+    display: block !important;
+}
+
+/* We haven’t created the block animation yet, so create an animation to make the block slide from the right to the left. */
+
+@keyframes block{
+    0%{left: 500px} 
+    100%{left: -20px}
+}
+
+.form-control-sm{
+    width: 100px !important;
+}
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #f44336; 
+    color: white;
+    margin-bottom: 15px;
+    position: fixed;
+    width: 90%;
+    right: 5px;
+    z-index: 1000;
+  }
+
+  .win {
+    background-color: rgb(4, 210, 4);
+  }
+  .loss {
+    background-color: rgb(210, 28, 4);
+  }
+  
+.alert {
+    opacity: 1;
+    transition: opacity 0.6s; /* 600ms to fade out */
+  }
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+
+  .header{
+    background-color: #121212;
+    color: #fff;
+    padding: 15px 5px;
+  }
+  body{
+    background-color: #d8d8d8;
+  }
